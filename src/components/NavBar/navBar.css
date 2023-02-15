@@ -1,0 +1,18 @@
+.nav {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 0.3rem;
+}
+
+.nav-item,
+.nav-logo {
+  text-decoration: none;
+  color: grey;
+}
+
+.nav-item:hover,
+.nav-logo:hover {
+  text-decoration: underline;
+}

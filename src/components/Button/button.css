@@ -1,0 +1,25 @@
+.button {
+  border: none;
+  outline: none;
+  padding: 0.3rem;
+  border-radius: 0.3rem;
+  background-color: blueviolet;
+}
+
+.sm {
+  width: 10vw;
+}
+.md {
+  width: 15vw;
+}
+.lg {
+  width: 18vw;
+}
+
+.primary {
+  background-color: aquamarine;
+}
+
+.secondary {
+  background-color: chartreuse;
+}

@@ -1,3 +1,4 @@
+import { Button } from "../Button/Button";
 import "./navBar.css";
 
 export const NavBar = () => {
@@ -6,6 +7,7 @@ export const NavBar = () => {
       <a href="/" className="nav-logo">
         LOGO
       </a>
+      <Button text="Subscribe" color="primary" size="lg" />
       <a className="nav-item" href="/">
         Home
       </a>

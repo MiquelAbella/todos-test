@@ -11,7 +11,6 @@ export const TodoColumn = ({
   const { todosList, setTodosList } = useContext(TodosContext);
 
   const deleteTodo = (todo) => {
-    console.log(todo.text);
     const filteredTodos = todosList.filter(
       (todoFromContext) => todoFromContext.text !== todo.text
     );

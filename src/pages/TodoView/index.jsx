@@ -4,7 +4,7 @@ import { TodoColumn } from "../../components/TodoColumn";
 import TodosContext from "../../context/TodosContext";
 
 export const TodoView = () => {
-  const { todosList } = useContext(TodosContext);
+  const { todosList, setTodosList } = useContext(TodosContext);
 
   const pendingTodos = todosList.filter((todo) => todo.status === "pending");
   const inProgressTodos = todosList.filter(
@@ -14,6 +14,16 @@ export const TodoView = () => {
 
   const [selectedTodo, setSelectedTodo] = useState(null);
 
+  const handleChangeTodoStatus = (e) => {
+    const filteredTodos = todosList.filter(
+      (todoFromContext) => todoFromContext.text !== selectedTodo.text
+    );
+
+    setTodosList([...filteredTodos, { ...selectedTodo, status: e.target.value }]);
+
+    setSelectedTodo(null)
+  };
+
   return (
     <div>
       <NavLink className="absolute top-6 right-6" to="/">
@@ -22,10 +32,10 @@ export const TodoView = () => {
       {selectedTodo && (
         <div>
           <p>Move to:</p>
-          <select>
-            <option>Pending</option>
-            <option>In progress</option>
-            <option>Finished</option>
+          <select onChange={(e) => handleChangeTodoStatus(e)}>
+            <option value="pending">Pending</option>
+            <option value="inProgress">In progress</option>
+            <option value="finished">Finished</option>
           </select>
         </div>
       )}
